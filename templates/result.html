@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>逆行列</h1>
+    {% if error_message %}
+        <p>{{ error_message }}</p>
+    {% else %}
+        <p>もとの行列</p>
+        <style>
+            .my-table th,
+            .my-table td {
+                border: 1px solid #999;
+                padding: 10px;
+            }
+        </style>
+
+            <table class="my-table">
+                <tr><th></th><th>1列</th><th>2列</th><th>3列</th></tr>
+                <tr><th>1行</th><td>{{ matrix_1_1 }}</td><td>{{ matrix_1_2 }}</td><td>{{ matrix_1_3 }}</td></tr>
+                <tr><th>2行</th><td>{{ matrix_2_1 }}</td><td>{{ matrix_2_2 }}</td><td>{{ matrix_2_3 }}</td></tr>
+                <tr><th>3行</th><td>{{ matrix_3_1 }}</td><td>{{ matrix_3_2 }}</td><td>{{ matrix_3_3 }}</td></tr>
+            </table>
+
+
+        <P>実行結果</P>
+
+        <table class="my-table">
+            <tr><th></th><th>1列</th><th>2列</th><th>3列</th></tr>
+            <tr><th>1行</th><td>{{ result_matrix_1_1 }}</td><td>{{ result_matrix_1_2 }}</td><td>{{ result_matrix_1_3 }}</td></tr>
+            <tr><th>2行</th><td>{{ result_matrix_2_1 }}</td><td>{{ result_matrix_2_2 }}</td><td>{{ result_matrix_2_3 }}</td></tr>
+            <tr><th>3行</th><td>{{ result_matrix_3_1 }}</td><td>{{ result_matrix_3_2 }}</td><td>{{ result_matrix_3_3 }}</td></tr>
+        </table>
+    {% endif %}
+    <a href="/">戻る</a>
+{% endblock %}
+
+
